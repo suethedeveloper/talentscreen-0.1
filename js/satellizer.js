@@ -25,7 +25,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' && module.ex
             withCredentials: false,
             tokenRoot: null,
             cordova: false,
-            baseUrl: 'http://130.211.190.15/api/v1/talentscreen/social',
+            baseUrl: 'http://0.0.0.0/api/v1/talentscreen/social',
             loginUrl: '/login',
             signupUrl: '/signup',
             unlinkUrl: '/auth/unlink/',
