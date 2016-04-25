@@ -1,0 +1,71 @@
+
+<md-progress-linear md-mode="determinate" value="{{(questionNo/questions.length)*100}}"></md-progress-linear>
+<div class="panel-heading" ng-show="quizBegin" data-z="0.5">
+
+    <div class="media">
+        <div class="media-left">
+                                            <span class="icon-block img-circle bg-indigo-300 half text-white"><i
+                                                    class="{{iconurl}}"></i></span>
+        </div>
+        <div class="media-body">
+            <h4 class="text-headline">Question {{questionNo}}</h4>
+            <p class="text-justify text-subhead">{{questionText}}</p>
+        </div>
+        <div class="media-right">
+            <div class="text-right text-headline text-red-900">
+                <blink data-speed="475" ng-hide="timerBlink"><strong>{{counter|formatTimer}}</strong></blink>
+                <span ng-hide="normalTimer"><strong>{{counter|formatTimer}}</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body" ng-show="quizBegin"
+     data-z="0.5">
+    <div class="media">
+        <div class="media-left">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div class="media-body">
+            <div class="radio radio-success">
+                <input type="radio" name="answer" id="answer1"
+                       ng-model="answer1" value="a">
+                <label for="answer1"><strong>A)</strong> {{answer1Text}}</label>
+            </div>
+
+
+            <div class="radio radio-success">
+                <input type="radio" name="answer" id="answer2"
+                       ng-model="answer2" value="b">
+                <label for="answer2"><strong>B)</strong> {{answer2Text}}</label>
+            </div>
+
+            <div class="radio radio-success">
+                <input type="radio" name="answer" id="answer3"
+                       ng-model="answer3" value="c">
+                <label for="answer3"><strong>C)</strong> {{answer3Text}}</label>
+            </div>
+
+            <div class="radio radio-success">
+                <input type="radio" name="answer" id="answer4"
+                       ng-model="answer4" value="d">
+                <label for="answer4"><strong>D)</strong> {{answer4Text}}</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="panel-footer" ng-show="quizBegin">
+    <div class="text-right">
+        <button class="btn btn-primary" ng-click="nextQuestion()"
+                ng-hide="count14"><i
+                class="fa fa-chevron-right fa-fw"></i> Next Question
+        </button>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-success" ng-click="finishQuestion()"
+                ng-hide="count15"> Finish
+        </button>
+    </div>
+</div>
+
+

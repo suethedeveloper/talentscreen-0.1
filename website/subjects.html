@@ -1,0 +1,828 @@
+<!--
+<home-page></home-page>
+<profile-data></profile-data>
+<div class="container">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="media v-middle">
+                        <div class="media-left">
+                            <div class="bg-green-400 text-white">
+                                <div class="panel-body">
+                                    <i class="fa fa-credit-card fa-fw fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            Your subscription ends on <span class="text-body-2">25 February 2015</span>
+                        </div>
+                        <div class="media-right media-padding">
+                            <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="#">
+                                Upgrade
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-toggle="isotope">
+                    <div class="item col-xs-12 col-lg-6">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-heading">
+                                <h4 class="text-headline margin-none">Courses</h4>
+                                <p class="text-subhead text-light">Your recent courses</p>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <a ui-sref="website-student.take-course" class="text-subhead list-group-link">Basics of HTML</a>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="progress progress-mini width-100 margin-none">
+                                            <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <a ui-sref="website-student.take-course" class="text-subhead list-group-link">Angular in Steps</a>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="progress progress-mini width-100 margin-none">
+                                            <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <a ui-sref="website-student.take-course" class="text-subhead list-group-link">Bootstrap Foundations</a>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="progress progress-mini width-100 margin-none">
+                                            <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="panel-footer text-right">
+                                <a ui-sref="website-student.courses" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-6">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-body">
+                                <h4 class="text-headline margin-none">Rewards</h4>
+                                <p class="text-subhead text-light">Your latest achievements</p>
+                                <div class="icon-block half img-circle bg-purple-300">
+                                    <i class="fa fa-star text-white"></i>
+                                </div>
+                                <div class="icon-block half img-circle bg-indigo-300">
+                                    <i class="fa fa-trophy text-white"></i>
+                                </div>
+                                <div class="icon-block half img-circle bg-green-300">
+                                    <i class="fa fa-mortar-board text-white"></i>
+                                </div>
+                                <div class="icon-block half img-circle bg-orange-300">
+                                    <i class="fa fa-code-fork text-white"></i>
+                                </div>
+                                <div class="icon-block half img-circle bg-red-300">
+                                    <i class="fa fa-diamond text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-heading">
+                                <h4 class="text-headline">Certificates
+                                    <small>(4)</small>
+                                </h4>
+                            </div>
+                            <div class="panel-body">
+                                <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                    <i class="fa fa-file-text"></i>
+                                </a>
+                                <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                    <i class="fa fa-file-text"></i>
+                                </a>
+                                <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                    <i class="fa fa-file-text"></i>
+                                </a>
+                                <a class="btn btn-default text-grey-400 btn-lg btn-circle paper-shadow relative" data-hover-z="0.5" data-animated data-toggle="tooltip" data-title="Name of Certificate">
+                                    <i class="fa fa-file-text"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-6">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-heading">
+                                <h4 class="text-headline margin-none">Quizzes</h4>
+                                <p class="text-subhead text-light">Your recent performance</p>
+                            </div>
+                            <ul class="list-group">
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <h4 class="text-subhead margin-none">
+                                            <a ui-sref="website-student.take-quiz" class="list-group-link">Title of quiz goes here?</a>
+                                        </h4>
+                                        <div class="caption">
+                                            <span class="text-light">Course:</span>
+                                            <a ui-sref="website-student.take-course">Basics of HTML</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right text-center">
+                                        <div class="text-display-1">5.8</div>
+                                        <span class="caption text-light">Good</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <h4 class="text-subhead margin-none">
+                                            <a ui-sref="website-student.take-quiz" class="list-group-link">Directives & Routing</a>
+                                        </h4>
+                                        <div class="caption">
+                                            <span class="text-light">Course:</span>
+                                            <a ui-sref="website-student.take-course">Angular in Steps</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right text-center">
+                                        <div class="text-display-1 text-green-300">9.8</div>
+                                        <span class="caption text-light">Great</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <h4 class="text-subhead margin-none">
+                                            <a ui-sref="website-student.take-quiz" class="list-group-link">Responsive & Retina</a>
+                                        </h4>
+                                        <div class="caption">
+                                            <span class="text-light">Course:</span>
+                                            <a ui-sref="website-student.take-course">Bootstrap Foundations</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right text-center">
+                                        <div class="text-display-1 text-red-300">3.4</div>
+                                        <span class="caption text-light">Failed</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a ui-sref="website-student.quizzes" class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item col-xs-12 col-lg-6">
+                        <h4 class="text-headline margin-none">Forum Activity</h4>
+                        <p class="text-subhead text-light">Latest forum topics & comments</p>
+                        <ul class="list-group relative paper-shadow" data-hover-z="0.5" data-animated>
+                            <li class="list-group-item paper-shadow">
+                                <div class="media v-middle">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/110/guy-3.jpg" alt="person" class="img-circle width-40" />
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a ui-sref="website-forum.thread" class="text-subhead link-text-color">Can someone help me with AngularJS?</a>
+                                        <div class="text-light">
+                                            Topic: <a ui-sref="website-forum.category">AngularJS</a> &nbsp; By: <a href="#">Adrian Demian</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="width-60 text-right">
+                                            <span class="text-caption text-light">1 hr ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item paper-shadow">
+                                <div class="media v-middle">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/110/guy-6.jpg" alt="person" class="img-circle width-40" />
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a ui-sref="website-forum.thread" class="text-subhead link-text-color">Can someone help me with AngularJS?</a>
+                                        <div class="text-light">
+                                            Topic: <a ui-sref="website-forum.category">AngularJS</a> &nbsp; By: <a href="#">Adrian Demian</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="width-60 text-right">
+                                            <span class="text-caption text-light">2 hrs ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item paper-shadow">
+                                <div class="media v-middle">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/110/guy-5.jpg" alt="person" class="img-circle width-40" />
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a ui-sref="website-forum.thread" class="text-subhead link-text-color">Can someone help me with AngularJS?</a>
+                                        <div class="text-light">
+                                            Topic: <a ui-sref="website-forum.category">AngularJS</a> &nbsp; By: <a href="#">Adrian Demian</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="width-60 text-right">
+                                            <span class="text-caption text-light">3 hr ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item paper-shadow">
+                                <div class="media v-middle">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img src="images/people/110/guy-4.jpg" alt="person" class="img-circle width-40" />
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a ui-sref="website-forum.thread" class="text-subhead link-text-color">Can someone help me with AngularJS?</a>
+                                        <div class="text-light">
+                                            Topic: <a ui-sref="website-forum.category">AngularJS</a> &nbsp; By: <a href="#">Adrian Demian</a>
+                                        </div>
+                                    </div>
+                                    <div class="media-right">
+                                        <div class="width-60 text-right">
+                                            <span class="text-caption text-light">4 hr ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <student-side-menu></student-side-menu>
+                <div class="item" data-ng-controller="socialcontroller" ng-show="linkedinorNot()">
+                    <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                        <div class="panel-body">
+                            <div class="media-right">
+                                &nbsp;&nbsp;&nbsp;
+                                <a href="#" class="btn btn-sm btn-primary" ng-click="authenticate('linkedin')"><i class="fa fa-linkedin"></i>
+                                    Link LinkedIn Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Featured</h4>
+                <div class="slick-basic slick-slider" data-items="1" data-items-lg="1" data-items-md="1" data-items-sm="1" data-items-xs="1">
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-default"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <i class="fa fa-github"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Github Webhooks for Beginners</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-primary"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-primary">
+                        <span class="v-center">
+                            <i class="fa fa-css3"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Awesome CSS with LESS Processing</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-lightred"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-lightred">
+                        <span class="v-center">
+                            <i class="fa fa-windows"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Portable Environments with Vagrant</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-brown"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-brown">
+                        <span class="v-center">
+                            <i class="fa fa-wordpress"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">WordPress Theme Development</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-purple"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-purple">
+                        <span class="v-center">
+                            <i class="fa fa-jsfiddle"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Modular JavaScript with Browserify</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default paper-shadow" data-z="0.5" data-hover-z="1" data-animated>
+                            <div class="panel-body">
+                                <div class="media media-clearfix-xs">
+                                    <div class="media-left">
+                                        <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                                            <span class="img icon-block s90 bg-default"></span>
+                                            <span class="overlay overlay-full padding-none icon-block s90 bg-default">
+                        <span class="v-center">
+                            <i class="fa fa-cc-visa"></i>
+                        </span>
+                                            </span>
+                                            <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                                <span class="v-center">
+                            <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading margin-v-5-3"><a ui-sref="website-courses.single">Easy Online Payments with Stripe</a></h4>
+                                        <p class="small margin-none">
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                            <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- Wrapper required for sidebar transitions -->
+<home-page></home-page>
+<div class="container">
+    <div class="sidebar right sidebar-size-3 sidebar-offset-0 sidebar-visible-desktop sidebar-skin-white" id="sidebar-library">
+        <div >
+            <h4 class="category">Category</h4>
+            <ul class="sidebar-block list-group list-group-menu list-group-minimal">
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">120+</span> Design</a></li>
+                <li class="list-group-item active"><a href="#"><span class="badge pull-right">30+</span> Programming</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">40+</span> WordPress</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">60+</span> Workflow</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">15+</span> HTML</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">25+</span> CSS</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">35+</span> iOS</a></li>
+                <li class="list-group-item"><a href="#"><span class="badge pull-right">20+</span> Free</a></li>
+            </ul>
+            <h4 class="category">View</h4>
+            <div class="sidebar-block">
+                <div class="form-group">
+                    <select class="selectpicker">
+                        <option>List</option>
+                        <option>Grid</option>
+                    </select>
+                </div>
+            </div>
+            <h4 class="category">Price</h4>
+            <div class="sidebar-block">
+                <div class="form-group input-group">
+                    <div class="row margin-none">
+                        <div class="col-xs-6 padding-none">
+                            <input class="form-control" type="text" placeholder="Min .." />
+                        </div>
+                        <div class="col-xs-6 padding-none">
+                            <input class="form-control" type="text" placeholder="Max .." />
+                        </div>
+                    </div>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar effects OUTSIDE of st-pusher: -->
+    <!-- st-effect-1, st-effect-2, st-effect-4, st-effect-5, st-effect-9, st-effect-10, st-effect-11, st-effect-12, st-effect-13 -->
+    <!-- content push wrapper -->
+    <div class="pusher" id="content">
+        <!-- sidebar effects INSIDE of st-pusher: -->
+        <!-- st-effect-3, st-effect-6, st-effect-7, st-effect-8, st-effect-14 -->
+        <!-- this is the wrapper for the content -->
+        <div class="st-content">
+            <!-- extra div for emulating position:fixed of the menu -->
+            <div class="st-content-inner padding-none">
+                <div class="container-fluid">
+                    <div class="page-section">
+                        <div class="media v-middle">
+                            <div class="media-body">
+                                <h1 class="text-display-1 margin-none">Library</h1>
+                                <p class="text-subhead">Browse through thousands of lessons.</p>
+                            </div>
+                            <div class="media-right">
+                                <div class="width-100 text-right">
+                                    <div class="btn-group">
+                                        <a class="btn btn-white" href="app-directory-grid.html"><i class="fa fa-th"></i></a>
+                                        <a class="btn btn-white" href="app-directory-list.html"><i class="fa fa-list"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" data-toggle="isotope">
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-default"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-default">
+                                        <span class="v-center">
+                <i class="fa fa-github"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">Github Webhooks for Beginners</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-3.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-primary"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-primary">
+                                        <span class="v-center">
+                <i class="fa fa-css3"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-primary btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">CSS with LESS Processing</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-8.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-lightred"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-lightred">
+                                        <span class="v-center">
+                <i class="fa fa-windows"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-red-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">Vagrant Portable Environments</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-7.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-brown"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-brown">
+                                        <span class="v-center">
+                <i class="fa fa-wordpress"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-orange-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">WordPress Theme Development</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-2.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-purple"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-purple">
+                                        <span class="v-center">
+                <i class="fa fa-jsfiddle"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-purple-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">Browserify: Writing Modular JavaScript</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-3.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-xs-12 col-sm-6 col-lg-4">
+                            <div class="panel panel-default paper-shadow" data-z="0.5">
+                                <div class="cover overlay cover-image-full hover">
+                                    <span class="img icon-block height-150 bg-pink-400 text-white"></span>
+                                    <a ui-sref="app-courses.course" class="padding-none overlay overlay-full icon-block bg-pink-400 text-white">
+                                        <span class="v-center">
+                <i class="fa fa-cc-visa"></i>
+            </span>
+                                    </a>
+                                    <a ui-sref="app-courses.course" class="overlay overlay-full overlay-hover overlay-bg-white">
+                                        <span class="v-center">
+                <span class="btn btn-circle btn-pink-500 btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="panel-body">
+                                    <h4 class="text-headline margin-v-0-10"><a ui-sref="app-courses.course">Super Easy Online Payments with Stripe</a></h4>
+                                    <p class="small margin-none">
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                        <span class="fa fa-fw fa-star-o text-yellow-800"></span>
+                                    </p>
+                                </div>
+                                <hr class="margin-none" />
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi delectus, excepturi.</p>
+                                    <div class="media v-middle">
+                                        <div class="media-left">
+                                            <img src="images/people/50/guy-2.jpg" alt="People" class="img-circle width-40" />
+                                        </div>
+                                        <div class="media-body">
+                                            <h4><a href="">Adrian Demian</a>
+                                                <br/>
+                                            </h4>
+                                            Instructor
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pagination margin-top-none">
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /st-content-inner -->
+        </div>
+        <!-- /st-content -->
+    </div>
+    <!-- /st-pusher -->
+    <!-- Footer -->
+    <footer class="footer">
+        <strong>Learning</strong> v1.0.0 &copy; Copyright 2015
+    </footer>
+    <!-- // Footer -->
+</div>
+<!-- /st-container -->

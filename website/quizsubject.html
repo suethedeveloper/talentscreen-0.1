@@ -1,0 +1,35 @@
+<div class="panel-body" ng-show="quizSubject">
+    <div class="form-group">
+        <label class="col-sm-3 control-label" style="font-size:large;font-family: FontAwesome; color:green;font-weight: bolder;">Select Subject</label>
+        <div class="col-sm-9">
+            <select name="selectSubject" ng-model="selectSubject"
+                    ng-change="selectSubjectChanged()" class="form-control input-lg select2"
+                    data-live-search="true" data-size="5">
+                <option ng-repeat="subject in subjects" value="{{subject.id}}">
+                    {{subject.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+<!--<div class="panel-body" ng-show="quizSubject">
+    <div class="form-group">
+        <div class="md-padding"  layout="column" layout-align="center center" ng-cloak>
+            <md-input-container>
+                <label >Select Subject</label>
+
+                <md-select style="width: 500px;margin: auto" name="selectSubject" ng-model="selectSubject"
+                           ng-change="selectSubjectChanged()" class=" input-lg select2"
+                           data-live-search="true" data-size="5">
+                    <md-option ng-repeat="subject in subjects" value="{{subject.id}}">
+                        {{subject.name}}
+                    </md-option>
+
+                </md-select>
+            </md-input-container>
+        </div>
+    </div>
+</div>-->
+
+
+

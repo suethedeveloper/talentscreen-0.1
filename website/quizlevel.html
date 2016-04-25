@@ -1,0 +1,33 @@
+<div class="panel-body" ng-show="quizLevels">
+    <div class="form-group">
+        <label class="col-sm-3 control-label" style="font-size:large;font-family: FontAwesome; color:green;font-weight: bolder;">Select Quiz Level</label>
+        <div class="col-sm-9">
+            <select name="selectType" ng-model="selectedLevel"
+                    ng-change="selectLevelChanged()" class="form-control input-lg select2"
+                    data-live-search="False" data-size="5">
+                <option ng-repeat="level in levels" value="{{level.id}}">
+                    {{level.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+<!--
+<div class="panel-body" ng-show="quizLevels">
+    <div class="form-group">
+        <div class="md-padding"  layout="column" layout-align="center center" ng-cloak>
+            <md-input-container>
+                <label >Select Quiz Level</label>
+                <md-select name="selectType" ng-model="selectedLevel" style="width: 500px"
+                           ng-change="selectLevelChanged()" class=" input-lg select2"
+                           data-live-search="False" data-size="5">
+                    <md-option style="align-items: center" ng-repeat="level in levels" value="{{level.id}}">
+                        {{level.name}}
+                    </md-option>
+                </md-select>
+        </div>
+
+
+    </div>
+</div>
+-->

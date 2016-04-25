@@ -1,0 +1,47 @@
+.radio label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #0d8aee;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: border 0.15s ease-in-out;
+    transition: all border 0.15s ease-in-out ease-out;
+}
+/*input:focus ~ label, input:valid ~ label {*/
+    /*top:-20px;*/
+    /*font-size:14px;*/
+    /*color:#42a5f5;*/
+/*}*/
+.media-body {
+    zoom: 1;
+    overflow: hidden;
+    padding-top:20px;
+}
+#fixed {
+    /*height: 550px;*/
+    overflow: auto;
+    max-height: 950px;
+ /*  position: absolute;
+    top: 0;
+    bottom: 0;
+   !* margin-left: inherit;*!
+    overflow: auto;
+    padding-top: 6%;
+*/
+
+}
+#fixed1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: 8%;
+overflow: auto;
+    padding-top: 6%;
+}
+
+

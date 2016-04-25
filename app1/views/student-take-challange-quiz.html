@@ -1,0 +1,144 @@
+<!--
+<student-dashboard></student-dashboard>
+<div class="container" data-ng-controller="takeChallangeQuizController">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="media v-middle">
+                        <div class="media-left">
+                            <div class="bg-green-400 text-white">
+                                <div class="panel-body">
+                                    <i class="fa fa-puzzle-piece fa-fw fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body" align="center">
+                            <h4 class="text-headline margin-none" style="padding-bottom: 15px; font-family: FontAwesome;color: green;font-weight: bolder"  >{{heading}}</h4>
+                        </div>
+                        <div class="media-right">
+                            <div class="text-right text-headline text-red-1000" >
+                                <h5 style="padding-right: 20px;font-family: FontAwesome; color:green;font-weight: bolder;text-align: center"><strong>{{subjectName}}</strong></h5></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-toggle="isotope">
+                    <div class="item col-xs-12 col-lg-12">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <test-types></test-types>
+                            <quiz-subject></quiz-subject>
+                            <quiz-level></quiz-level>
+                            <div class="panel-body" ng-show="quizStartAccepted">
+                                <ul class="list-group">
+                                    <li class="list-group-item media v-middle">
+                                        <div class="media-body" ng-show="multipleChoiceQuiz" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                            <p class="text-justify">
+                                                This timed multiple-choice quiz contains 15
+                                                questions. For each question there is correct answer and three incorrect
+                                                answers. Every question has a timer attached.
+                                                Timer countdown can change on question. It is not possible to stop the
+                                                timer and start it again. Once the timer countdown is finished, the quiz
+                                                moves to next question. Once all the
+                                                questions are finished, quiz results will be submitted to the
+                                                application.
+                                            </p>
+                                            <p class="text-center lead">Click Start to Continue!!!</p>
+                                        </div>
+                                        <div class="media-body" ng-show="codingCompilationQuiz" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                            <p class="text-justify">
+                                                Ready to use code editor to code,compile,execute and share
+                                                your coding experience in java,html,javascript and many other languages.
+                                            </p>
+                                            <p class="text-center lead">Click Start to Continue!!!</p>
+                                        </div>
+                                        <div class="media-body" ng-show="videoQuizContainer" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                            <p class="text-justify">
+                                                Find a way to evaluate any prespective candidates not only for their technical expertise
+                                                but also on their interpersonal skill by conducting a simple series of record and send video quiz.
+                                            </p>
+                                            <p class="text-center lead">Click Start to Continue!!!</p>
+                                        </div>
+                                        <div class="media-body" ng-show="videoNotSupported" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                            <p class="text-justify">
+                                                Your device will not support this video Quiz, To access this video quiz you need webcam and microphone to your device.If you people
+                                                are using chrome its not working.so please use video quiz in mozilla firefox.thank you for your patience
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="panel-footer text-right">
+                                    <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
+                                            data-z="0" data-hover-z="1" data-animated href="#"> Start
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="panel-body" ng-show="countDown">
+                                <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
+                                    <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
+                                </div>
+                                <div class="panel-footer text-right">
+                                    <button ng-click="cancelQuiz()" class="btn btn-warning paper-shadow relative"
+                                            data-z="0" data-hover-z="1" data-animated href="#"> Cancel
+                                    </button>
+                                </div>
+                            </div>
+                            <choice-quiz></choice-quiz>
+                            <coding-quiz></coding-quiz>
+                            <video-quiz></video-quiz>
+                            <quiz-results></quiz-results>
+
+                        </div>
+                    </div>
+
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <student-side-menu></student-side-menu>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+<student-dashboard></student-dashboard>
+<div class="container" data-ng-controller="takeChallangeQuizController">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="media v-middle">
+                        <div class="media-left">
+                            <div class="bg-green-400 text-white">
+                                <div class="panel-body">
+                                    <i class="fa fa-puzzle-piece fa-fw fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body" align="center">
+                            <h4 class="text-headline margin-none" style="padding-bottom: 15px; font-family: FontAwesome;color: green;font-weight: bolder"  >{{heading}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-toggle="isotope">
+                    <div class="item col-xs-12 col-lg-12">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <test-types></test-types>
+                        </div>
+                    </div>
+
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <student-side-menu></student-side-menu>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <footer></footer>
+</footer>

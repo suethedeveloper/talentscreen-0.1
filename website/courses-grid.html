@@ -1,0 +1,54 @@
+
+<div id="fixed1" data-ng-controller="subjectController" directive-when-scrolled="loadMore()" resize>
+<home-page></home-page>
+    <subject-library></subject-library>
+<div class="container">
+    <div class="page-section">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+            <div class="dropdown" align="right">
+                <button class="btn btn-default dropdown-toggle form-control" type="button" data-toggle="dropdown" style="background-color: white;border: solid 1px #00b8d4;">
+                    {{categoryName}}
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li data-ng-repeat="data in all">
+                        <a href="#" ng-click="{{data.fun}}">{{data.name}}<span class="badge pull-right"></span></a>
+                    </li>
+                    <li  data-ng-repeat="data in dataNewCat">
+                        <a href="#" ng-click="category({{data.id}})">{{data.name}} <span class="badge pull-right">{{data.count}}</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="dropdown" align="center">
+                <button class="btn btn-default dropdown-toggle form-control" type="button" data-toggle="dropdown" style="background-color: white;border: solid 1px #00b8d4;">
+                    {{SortBy}}
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li data-ng-repeat="data in dropdown">
+                        <a type="select" href="#" ng-click="{{data.fun}}" ngvalue="{{data.id}}">{{data.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div align="right">
+                <p><input type="text" class="form-control"  placeholder="search subject" ng-model="test" style="background-color: white;border: solid 1px #00b8d4"></p></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <subject-display></subject-display>
+                <br/>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+<footer class="footer">
+    <strong>Learning</strong> v1.0.0 &copy; Copyright 2015
+</footer>

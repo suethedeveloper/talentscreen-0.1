@@ -1,0 +1,148 @@
+<!-- Fixed navbar -->
+<top-nav-bar></top-nav-bar>
+<div class="container">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="media v-middle">
+                        <div class="media-left">
+                            <div class="bg-green-400 text-white">
+                                <div class="panel-body">
+                                    <i class="fa fa-puzzle-piece fa-fw fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="text-headline margin-none">Quiz Challenge</h4>
+                        </div>
+                        <div class="media-right media-padding">
+                            {{subjectTitle}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-toggle="isotope">
+                    <div class="item col-xs-12 col-lg-12">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+
+                            <div class="panel-body" ng-hide="quizStartAccepted">
+                                <ul class="list-group">
+                                    <li class="list-group-item media v-middle">
+                                        <div class="media-body">
+                                            <p class="text-justify">
+                                                This timed multiple-choice quiz contains {{questionsCountRange}}
+                                                questions. For each question there is correct answer and three incorrect
+                                                answers. Every question has a timer attached.
+                                                Timer countdown can change on question. It is not possible to stop the
+                                                timer and start it again. Once the timer countdown is finished, the quiz
+                                                moves to next question. Once all the
+                                                questions are finished, quiz results will be submitted to the
+                                                application.
+                                            </p>
+                                            <p class="text-center lead">Click Start to Continue!!!</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="panel-footer text-right">
+                                    <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
+                                            data-z="0" data-hover-z="1" data-animated href="#"> Start
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div ng-show="quizStartAccepted">
+                                <div class="panel-body" ng-hide="quizBegin">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Select Subject</label>
+                                        <div class="col-sm-9">
+                                            <select name="selectSubject" ng-model="selectSubject"
+                                                    ng-change="subjectChanged()" class="selectpicker"
+                                                    data-style="btn-info"
+                                                    data-live-search="true" data-size="5">
+                                                <option ng-repeat="subject in subjects" value="{{subject.id}}">
+                                                    {{subject.name}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-heading" ng-show="quizBegin" data-z="0.5">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <span class="icon-block img-circle bg-indigo-300 half text-white"><i
+                                                    class="fa fa-question"></i></span>
+                                        </div>
+                                        <div class="media-body">
+                                            <h4 class="text-headline">Question {{questionNo}}</h4>
+                                            <p class="text-justify text-subhead">{{questionText}}</p>
+                                        </div>
+                                        <div class="media-right">
+                                            <div class="text-right text-headline text-red-900">
+                                                <timer interval="1000" countdown="10" max-time-unit="minute"
+                                                       autostart="false" finish-callback="finished()">
+                                                    {{mminutes}}:{{sseconds}}
+                                                </timer>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body" ng-show="quizBegin"
+                                     data-z="0.5">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="radio radio-success">
+                                                <input type="radio" name="answer" id="answer1"
+                                                       ng-model="answer1">
+                                                <label for="answer1"><strong>A)</strong> {{answer1Text}}</label>
+                                            </div>
+
+
+                                            <div class="radio radio-success">
+                                                <input type="radio" name="answer" id="answer2"
+                                                       ng-model="answer2">
+                                                <label for="answer2"><strong>B)</strong> {{answer2Text}}</label>
+                                            </div>
+
+                                            <div class="radio radio-success">
+                                                <input type="radio" name="answer" id="answer3"
+                                                       ng-model="answer3">
+                                                <label for="answer3"><strong>C)</strong> {{answer3Text}}</label>
+                                            </div>
+
+                                            <div class="radio radio-success">
+                                                <input type="radio" name="answer" id="answer4"
+                                                       ng-model="answer4">
+                                                <label for="answer4"><strong>D)</strong> {{answer4Text}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="panel-footer" ng-show="quizBegin">
+                                    <div class="text-right">
+                                        <button class="btn btn-primary" ng-click="nextQuestion()"
+                                                ng-disabled="timerExecutionInProcess"><i
+                                                class="fa fa-chevron-right fa-fw"></i> Next Question
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <student-side-menu></student-side-menu>
+            </div>
+        </div>
+    </div>
+</div>

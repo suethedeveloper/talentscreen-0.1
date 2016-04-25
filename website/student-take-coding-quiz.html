@@ -1,0 +1,129 @@
+<!-- Fixed navbar -->
+<student-dashboard></student-dashboard>
+
+<div class="container">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="media v-middle">
+                        <div class="media-left">
+                            <div class="bg-green-400 text-white">
+                                <div class="panel-body">
+                                    <i class="fa fa-code fa-fw fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="text-headline margin-none">Coding Challenges</h4>
+                        </div>
+                        <!--<div class="media-right media-padding">
+                            <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="#">
+                                Upgrade
+                            </a>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="row" data-toggle="isotope" ng-controller="codeQuizController">
+                    <div class="item col-xs-12 col-lg-12">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-heading">
+                                <h6 class="text-headline margin-none">Coding Quiz {{language}}</h6>
+                            </div>
+                            <ul class="list-group" ng-hide="quizStartAccepted">
+                                <li class="list-group-item media v-middle">
+                                    <div class="media-body">
+                                        <p class="text-justify">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias,
+                                            blanditiis eligendi expedita ipsam minus non numquam quidem reiciendis ut?
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias,
+                                            blanditiis eligendi expedita ipsam minus non numquam quidem reiciendis ut?
+
+                                            Click Start to Continue!!!
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="panel-footer text-right" ng-hide="quizStartAccepted">
+                                <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
+                                        data-z="0" data-hover-z="1" data-animated href="#"> Start
+                                </button>
+                            </div>
+                            <div class="panel-body" ng-show="quizStartAccepted" ng-hide="quizBegin">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Select Language</label>
+                                    <div class="col-sm-9">
+                                        <select name="selectLanguage" ng-model="selectLanguage"
+                                                ng-change="languageChanged()" class="selectpicker" data-style="btn-info"
+                                                data-live-search="true" data-size="5">
+                                            <option ng-repeat="language in languages" value="{{language.id}}">
+                                                {{language.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-body" ng-show="quizBegin">
+                                <div class="form-group">
+                                    <div>
+                                        <section>
+                                            <textarea ui-codemirror="cmOption" ng-model="cmModel"
+                                                      style="width: 70%; height:100px"></textarea>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-footer" ng-show="quizBegin">
+                                <div class="text-left">
+                                    <button class="btn btn-success" ng-click="compile()"><i
+                                            class="fa fa-play fa-fw"></i> Run It
+                                    </button>
+                                    <button class="btn btn-primary" ng-click="next()"><i
+                                            class="fa fa-forward fa-fw"></i> Next Question
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="panel-body" ng-show="quizBegin">
+                                <span>Result:{{result}}</span><br/>
+                                <span>Information:{{info}}</span><br/>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <br/>
+                <br/>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-default" data-toggle="panel-collapse" data-open="true">
+                    <div class="panel-heading panel-collapse-trigger">
+                        <h4 class="panel-title">My Account</h4>
+                    </div>
+                    <div class="panel-body list-group">
+                        <ul class="list-group list-group-menu">
+                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color"
+                                                                                   ui-sref="website-student.dashboard">Dashboard</a>
+                            </li>
+                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color"
+                                                                                   ui-sref="website-student.take-quiz">Coding
+                                Quiz</a></li>
+                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color"
+                                                                                   ui-sref="website-student.private-profile">Profile</a>
+                            </li>
+                            <li class="list-group-item" ui-sref-active="active"><a class="link-text-color"
+                                                                                   ui-sref="website-student.messages">Messages</a>
+                            </li>
+                            <li class="list-group-item"><a class="link-text-color"
+                                                           ui-sref="login"><span>Logout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="panel-heading" ng-show="codingQuizBegin" data-z="0.5">
+    <div class="media">
+        <div class="media-left">
+                                            <span class="icon-block img-circle bg-indigo-300 half text-white"><i
+                                                    class="{{iconurl}}"></i></span>
+        </div>
+        <div class="media-body">
+            <h4 class="text-headline">Question {{questionNo}}</h4>
+            <p class="text-justify text-subhead">{{questionText}}</p>
+        </div>
+        <div class="media-right">
+            <div class="text-right text-headline text-red-900">
+                <blink data-speed="475" ng-hide="timerBlink"><strong>{{counter|formatTimer}}</strong></blink>
+                <span ng-hide="normalTimer"><strong>{{counter|formatTimer}}</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body" ng-show="codingQuizBegin"
+     data-z="0.5">
+    <div class="media">
+        <div class="media-left">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div class="media-body" ng-show="codingQuizBegin">
+            <div class="form-group">
+                <div>
+                    <section>
+                                            <textarea ui-codemirror="cmOption" ng-model="cmModel" ui-refresh='isSomething'
+                                                      style="width: 70%; height:100px"></textarea>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="panel-footer" ng-show="codingQuizBegin">
+
+    <div class="text-right">
+        <button class="btn btn-success" ng-click="compile()"><i
+                class="fa fa-play fa-fw"></i> Run It
+        </button>
+        <button class="btn btn-primary" ng-click="nextQuestion()" ng-hide="count14"><i
+                class="fa fa-forward fa-fw"></i> Next Question
+        </button>
+        <button class="btn btn-success" ng-click="finishQuestion()"
+                ng-hide="count15"> Finish
+        </button>
+    </div>
+
+</div>
+<div class="panel-body" ng-show="codingQuizBeginresult">
+    <span>Result:{{result}}</span><br/>
+    <span>Information:{{info}}</span><br/>
+</div>

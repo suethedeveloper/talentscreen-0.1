@@ -1,0 +1,158 @@
+<div class="row" data-toggle="isotope">
+    <div class="item col-xs-12 col-sm-6 col-lg-3" data-ng-repeat="data in logEventFilter = (dataNew | orderBy:'-counts' | filter:test | limitTo:limit)" ng-hide="normal">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="cover overlay cover-image-full hover" >
+                <span class="img icon-block height-100 bg-default" style="height: 100px"></span>
+                <a ui-sref="website-courses.single" class="padding-none overlay overlay-full icon-block bg-default" style="height: 100px">
+                                    <span class="v-center">
+                <i class="{{data.icon_class}}"></i>
+            </span>
+                </a>
+                <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white" style="height: 100px">
+                                    <span class="v-center">
+                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                    </span>
+                </a>
+            </div>
+            <div class="panel-body" style="height: 140px">
+                <h4 class="text-headline margin-v-0-10"><a ui-sref="">{{data.name}}</a></h4>
+               <p class="small margin-none">
+               <span class="badge">{{data.counts}}</span>
+                <p>{{data.description}}</p>
+                              </div>
+            <hr class="margin-none" />
+                <h5><i class="glyphicon glyphicon-check" style="font-size:20px;color: greenyellow">
+                    <span class="badge pull-right"> {{data.choicequiz}}</span></i>
+                    <i class="glyphicon glyphicon-edit" style="font-size:20px;color: orange;padding-left: 5%">
+                        <span class="badge pull-right"> {{data.codingquiz}}</span></i>
+                    <i class="fa fa-video-camera" style="font-size:20px;color: #00cee6;padding-left: 5%" ng-hide="video">
+                        <span class="badge pull-right"> {{data.videoquiz}}</span></i> </h5>
+            </div>
+        </div>
+    </div>
+<div class="row" data-toggle="isotope">
+    <div class="item col-xs-12 col-sm-6 col-lg-3" data-ng-repeat="data in logEventFilter = (popularityData | orderBy:'-studentscount' | filter:test | limitTo:limit)" ng-hide="popularityShow">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="cover overlay cover-image-full hover" >
+                <span class="img icon-block height-100 bg-default" style="height: 100px"></span>
+                <a ui-sref="website-courses.single" class="padding-none overlay overlay-full icon-block bg-default" style="height: 100px">
+                                    <span class="v-center">
+                <i class="{{data.icon_class}}"></i>
+            </span>
+                </a>
+                <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white" style="height: 100px">
+                                    <span class="v-center">
+                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                    </span>
+                </a>
+            </div>
+            <div class="panel-body" style="height: 120px">
+                <h4 class="text-headline margin-v-0-10"><a ui-sref="">{{data.name}}</a></h4>
+                <p class="small margin-none">
+                    <span class="badge">{{data.counts}}</span>
+            </div>
+            <hr class="margin-none" />
+            <h5><i class="glyphicon glyphicon-check" style="font-size:20px;color: greenyellow">
+                <span class="badge pull-right"> {{data.choicequiz}}</span></i>
+                <i class="glyphicon glyphicon-edit" style="font-size:20px;color: orange;padding-left: 5%">
+                    <span class="badge pull-right"> {{data.codingquiz}}</span></i>
+                <i class="fa fa-video-camera" style="font-size:20px;color: #00cee6;padding-left: 5%" ng-hide="video">
+                    <span class="badge pull-right"> {{data.videoquiz}}</span></i> </h5>
+            <!--<div class="media v-middle">
+                <div class="media-left">
+                    <img src="images/people/50/guy-9.jpg" alt="People" class="img-circle width-40" />
+                </div>
+                <div class="media-body">
+                    <h4><a href="">sandy Desu</a>
+                        <br/>
+                    </h4>
+                    Instructor
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+<div class="row" data-toggle="isotope">
+    <div class="item col-xs-12 col-sm-6 col-lg-3" data-ng-repeat="data in logEventFilter = (latestData | filter:test | limitTo:limit)" ng-hide="latestShow">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="cover overlay cover-image-full hover" >
+                <span class="img icon-block height-100 bg-default" style="height: 100px"></span>
+                <a ui-sref="website-courses.single" class="padding-none overlay overlay-full icon-block bg-default" style="height: 100px">
+                                    <span class="v-center">
+                <i class="{{data.icon_class}}"></i>
+            </span>
+                </a>
+                <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white" style="height: 100px">
+                                    <span class="v-center">
+                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                    </span>
+                </a>
+            </div>
+            <div class="panel-body" style="height: 120px">
+                <h4 class="text-headline margin-v-0-10"><a ui-sref="">{{data.name}}</a></h4>
+                <p class="small margin-none">
+                    <span class="badge">{{data.counts}}</span>
+            </div>
+            <hr class="margin-none" />
+            <h5><i class="glyphicon glyphicon-check" style="font-size:20px;color: greenyellow">
+                <span class="badge pull-right"> {{data.choicequiz}}</span></i>
+                <i class="glyphicon glyphicon-edit" style="font-size:20px;color: orange;padding-left: 5%">
+                    <span class="badge pull-right"> {{data.codingquiz}}</span></i>
+                <i class="fa fa-video-camera" style="font-size:20px;color: #00cee6;padding-left: 5%" ng-hide="video">
+                    <span class="badge pull-right"> {{data.videoquiz}}</span></i> </h5>
+            <!--<div class="media v-middle">
+                <div class="media-left">
+                    <img src="images/people/50/guy-9.jpg" alt="People" class="img-circle width-40" />
+                </div>
+                <div class="media-body">
+                    <h4><a href="">sandy Desu</a>
+                        <br/>
+                    </h4>
+                    Instructor
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+<div class="row" data-toggle="isotope">
+    <div class="item col-xs-12 col-sm-6 col-lg-3" data-ng-repeat="data in logEventFilter = (subjectData | filter:test | limitTo:limit)" ng-hide="subjectShow">
+        <div class="panel panel-default paper-shadow" data-z="0.5">
+            <div class="cover overlay cover-image-full hover" >
+                <span class="img icon-block height-100 bg-default" style="height: 100px"></span>
+                <a ui-sref="website-courses.single" class="padding-none overlay overlay-full icon-block bg-default" style="height: 100px">
+                                    <span class="v-center">
+                <i class="{{data.icon_class}}"></i>
+            </span>
+                </a>
+                <a ui-sref="website-courses.single" class="overlay overlay-full overlay-hover overlay-bg-white" style="height: 100px">
+                                    <span class="v-center">
+                <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                                    </span>
+                </a>
+            </div>
+            <div class="panel-body" style="height: 120px">
+                <h4 class="text-headline margin-v-0-10"><a ui-sref="">{{data.name}}</a></h4>
+                <p class="small margin-none">
+                    <span class="badge">{{data.counts}}</span>
+            </div>
+            <hr class="margin-none" />
+            <h5><i class="glyphicon glyphicon-check" style="font-size:20px;color: greenyellow">
+                <span class="badge pull-right"> {{data.choicequiz}}</span></i>
+                <i class="glyphicon glyphicon-edit" style="font-size:20px;color: orange;padding-left: 5%">
+                    <span class="badge pull-right"> {{data.codingquiz}}</span></i>
+                <i class="fa fa-video-camera" style="font-size:20px;color: #00cee6;padding-left: 5%" ng-hide="video">
+                    <span class="badge pull-right"> {{data.videoquiz}}</span></i> </h5>
+            <!--<div class="media v-middle">
+                <div class="media-left">
+                    <img src="images/people/50/guy-9.jpg" alt="People" class="img-circle width-40" />
+                </div>
+                <div class="media-body">
+                    <h4><a href="">sandy Desu</a>
+                        <br/>
+                    </h4>
+                    Instructor
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>

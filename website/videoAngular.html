@@ -1,0 +1,143 @@
+<!--
+&lt;!&ndash;<div>
+    <div ng-controller="takeChallangeQuizController as controller " class="videogular-container" style="width: 500px;height: 350px;">
+        <videogular vg-theme="controller.config.theme.url">
+            <vg-media vg-src="controller.sources"
+                      vg-tracks="controller.config.tracks" vg-preload="controller.config.preload">
+            </vg-media>
+
+            <vg-controls vg-autohide="controller.config.plugins.controls.autoHide" vg-autohide-time="controller.config.plugins.controls.autoHideTime">
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+                <vg-volume>
+                    <vg-mute-button></vg-mute-button>
+                    <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-fullscreen-button></vg-fullscreen-button>
+               &lt;!&ndash; <my-stop-button></my-stop-button>&ndash;&gt;
+                <div class='my-button iconButton'><a href='http://www.videogular.com' target='_blank'>LOGO</a></div>
+            </vg-controls>
+        </videogular>
+    </div>
+</div>&ndash;&gt;
+<div ng-controller="takeChallangeQuizController as controller" class="videogular-container">
+    <videogular vg-theme="controller.config.theme.url">
+        <vg-media vg-src="controller.config.sources"
+                  vg-tracks="controller.config.tracks"
+                  vg-native-controls="true">
+        </vg-media>
+    </videogular>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.min.js"></script>
+<script src="http://static.videogular.com/scripts/videogular/latest/videogular.js"></script>
+-->
+
+<section class="ng-video-container">
+
+    <!-- Base Directive -->
+    <section class="video" ng-video>
+
+        <!-- Screen Directive -->
+        <video vi-screen></video>
+
+        <section vi-controls class="controls">
+            <span vi-controls-play title="Play" class="glyphicon glyphicon-play"></span>
+            <span vi-controls-pause title="Pause" class="glyphicon glyphicon-pause"></span>
+        </section>
+
+        <!-- Full Screen Directive -->
+        <section class="full-screen">
+            <span title="Full Screen" vi-full-screen-toggle class="glyphicon glyphicon-fullscreen"></span>
+        </section>
+
+        <!-- Feedback Directive -->
+        <section vi-feedback class="feedback">
+
+            <span class="buffering" ng-show="buffering">Buffering...</span>
+
+            <section class="loading" ng-show="loading">
+                Loading...
+            </section>
+
+            <!-- Volume Directive -->
+            <section vi-volume class="volume">
+
+                <div class="scale">
+                    <div class="bar" style="width: {{volume * 100}}%"></div>
+                </div>
+
+                <span vi-volume-decrease title="Decrease Volume" class="decrease glyphicon glyphicon-minus"></span>
+                <span vi-volume-increase title="Increase Volume" class="increase glyphicon glyphicon-plus"></span>
+
+            </section>
+
+            <!-- Duration Directive -->
+            <section class="duration">
+                {{currentTime | number: 2}}s of {{duration | number: 2}}s
+                [{{percentagePlayed | number: 0}}%]
+            </section>
+
+            <!--<section class="title">ngVideo</section>-->
+
+            <!-- Timeline Directive -->
+            <section class="timeline">
+                <input vi-timeline />
+            </section>
+
+            <!-- Buffer Directive -->
+            <section vi-buffer class="buffer"></section>
+
+            <section class="generic">
+                V{{volume}}
+                <span vi-messages>M{{messages.length}}</span>
+                R{{playbackRate}}
+                P{{playing ? 1 : 0}}
+                L{{loading ? 1 : 0}}
+                B{{buffered}}%
+                <a href="https://github.com/Wildhoney/ngVideo" target="_blank">
+                    GitHub.com/Wildhoney/ngVideo
+                </a>
+            </section>
+
+        </section>
+
+        <!-- Playlist Directive -->
+        <section vi-playlist class="playlist" ng-show="$parent.playlistOpen">
+
+            <ul>
+                <li class="title">
+                    <span class="glyphicon glyphicon-facetime-video"></span> &nbsp;
+                    Playlist
+                    <div class="close-playlist"
+                         title="Close Playlist"
+                         ng-click="$parent.playlistOpen = !$parent.playlistOpen">
+                        &times;
+                    </div>
+                </li>
+                <li vi-playlist-video ng-repeat="video in videos" ng-model="video">
+
+                        <span vi-meta ng-model="video" class="meta">
+                            {{duration | number: 2}}s
+                        </span>
+
+                    {{getVideoName(video)}}
+
+                </li>
+            </ul>
+
+        </section>
+
+            <span title="Open Playlist"
+                  ng-show="!playlistOpen"
+                  ng-click="playlistOpen = !playlistOpen"
+                  class="open-playlist glyphicon glyphicon-facetime-video">
+            </span>
+
+    </section>
+
+</section>
+
