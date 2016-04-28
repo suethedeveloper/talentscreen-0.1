@@ -24,40 +24,42 @@
                 <div class="row" data-toggle="isotope">
                     <div class="item col-xs-12 col-lg-12">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
-                            <quiz-subject></quiz-subject>
-                            <quiz-level></quiz-level>
-                            <div class="panel-body" ng-show="quizStartAccepted">
-                                <ul class="list-group">
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body"  style="font-family: FontAwesome; font-size: large ; color: forestgreen">
-                                            <p class="text-justify">
-                                                This timed multiple-choice quiz contains 15
-                                                questions. For each question there is correct answer and three incorrect
-                                                answers. Every question has a timer attached.
-                                                Timer countdown can change on question. It is not possible to stop the
-                                                timer and start it again. Once the timer countdown is finished, the quiz
-                                                moves to next question. Once all the
-                                                questions are finished, quiz results will be submitted to the
-                                                application.
-                                            </p>
-                                            <p class="text-center lead">Click Start to Continue!!!</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="panel-footer text-right">
-                                    <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
-                                            data-z="0" data-hover-z="1" data-animated href="#"> Start
-                                    </button>
+                            <div ng-controller="preQuizController">
+                                <quiz-subject></quiz-subject>
+                                <quiz-level></quiz-level>
+                                <div class="panel-body" ng-show="quizStartAccepted">
+                                    <ul class="list-group">
+                                        <li class="list-group-item media v-middle">
+                                            <div class="media-body"  style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                                <p class="text-justify">
+                                                    This timed multiple-choice quiz contains 15
+                                                    questions. For each question there is correct answer and three incorrect
+                                                    answers. Every question has a timer attached.
+                                                    Timer countdown can change on question. It is not possible to stop the
+                                                    timer and start it again. Once the timer countdown is finished, the quiz
+                                                    moves to next question. Once all the
+                                                    questions are finished, quiz results will be submitted to the
+                                                    application.
+                                                </p>
+                                                <p class="text-center lead">Click Start to Continue!!!</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="panel-footer text-right">
+                                        <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
+                                                data-z="0" data-hover-z="1" data-animated href="#"> Start
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="panel-body" ng-show="countDown">
-                                <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
-                                    <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
-                                </div>
-                                <div class="panel-footer text-right">
-                                    <button ng-click="cancelQuiz()" class="btn btn-warning paper-shadow relative"
-                                            data-z="0" data-hover-z="1" data-animated href="#"> Cancel
-                                    </button>
+                                <div class="panel-body" ng-show="countDown">
+                                    <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
+                                        <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
+                                    </div>
+                                    <div class="panel-footer text-right">
+                                        <button ng-click="cancelQuiz()" class="btn btn-warning paper-shadow relative"
+                                                data-z="0" data-hover-z="1" data-animated href="#"> Cancel
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <choice-quiz></choice-quiz>

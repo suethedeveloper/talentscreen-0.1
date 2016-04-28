@@ -24,45 +24,46 @@
                 <div class="row" data-toggle="isotope">
                     <div class="item col-xs-12 col-lg-12">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
-                            <quiz-subject></quiz-subject>
-                            <quiz-level></quiz-level>
-                            <div class="panel-body" ng-show="quizStartAccepted">
-                                <ul class="list-group">
-                                    <li class="list-group-item media v-middle">
-                                        <div class="media-body" ng-show="videoQuizContainer" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
-                                            <p class="text-justify">
-                                                Find a way to evaluate any prespective candidates not only for their technical expertise
-                                                but also on their interpersonal skill by conducting a simple series of record and send video quiz.
-                                            </p>
-                                            <p class="text-center lead">Click Start to Continue!!!</p>
-                                        </div>
-                                        <div class="media-body" ng-show="videoNotSupported" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
-                                            <p class="text-justify">
-                                                Your device will not support this video Quiz, To access this video quiz you need webcam and microphone to your device.If you people
-                                                are using chrome its not working.so please use video quiz in mozilla firefox.thank you for your patience
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="panel-footer text-right">
-                                    <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
-                                            data-z="0" data-hover-z="1" data-animated href="#"> Start
-                                    </button>
+                            <div ng-controller="preQuizController">
+                                <quiz-subject></quiz-subject>
+                                <quiz-level></quiz-level>
+                                <div class="panel-body" ng-show="quizStartAccepted">
+                                    <ul class="list-group">
+                                        <li class="list-group-item media v-middle">
+                                            <div class="media-body" ng-show="videoQuizContainer" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                                <p class="text-justify">
+                                                    Find a way to evaluate any prespective candidates not only for their technical expertise
+                                                    but also on their interpersonal skill by conducting a simple series of record and send video quiz.
+                                                </p>
+                                                <p class="text-center lead">Click Start to Continue!!!</p>
+                                            </div>
+                                            <div class="media-body" ng-show="videoNotSupported" style="font-family: FontAwesome; font-size: large ; color: forestgreen">
+                                                <p class="text-justify">
+                                                    Your device will not support this video Quiz, To access this video quiz you need webcam and microphone to your device.If you people
+                                                    are using chrome its not working.so please use video quiz in mozilla firefox.thank you for your patience
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="panel-footer text-right">
+                                        <button ng-click="startQuiz()" class="btn btn-success paper-shadow relative"
+                                                data-z="0" data-hover-z="1" data-animated href="#"> Start
+                                        </button>
+                                    </div>
                                 </div>
+                                <div class="panel-body" ng-show="countDown">
+                                    <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
+                                        <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
+                                    </div>
+                                    <div class="panel-footer text-right">
+                                        <button ng-click="cancelQuiz()" class="btn btn-warning paper-shadow relative"
+                                                data-z="0" data-hover-z="1" data-animated href="#"> Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                                <video-quiz></video-quiz>
+                                <quiz-results></quiz-results>
                             </div>
-                            <div class="panel-body" ng-show="countDown">
-                                <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
-                                    <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
-                                </div>
-                                <div class="panel-footer text-right">
-                                    <button ng-click="cancelQuiz()" class="btn btn-warning paper-shadow relative"
-                                            data-z="0" data-hover-z="1" data-animated href="#"> Cancel
-                                    </button>
-                                </div>
-                            </div>
-                            <video-quiz></video-quiz>
-                            <quiz-results></quiz-results>
-
                         </div>
                     </div>
 

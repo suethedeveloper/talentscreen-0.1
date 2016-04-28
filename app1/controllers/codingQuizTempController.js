@@ -5,10 +5,15 @@ talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localS
     $scope.counter = 5;
     var count=1;
     $scope.count15 = true;
+    $scope.testtype = 2;
+
     var sessiondata=$cookieStore.get("session");
+    $scope.sessiondata = sessiondata;
+
     var totalTimeForCodingQuiz=0;
     var totalTimeForQuiz=0;
     var jsonData={type:"subject",token:sessiondata.token,testtype:2};
+
     tsQuizTemplate.query(jsonData).$promise.then(function (data) {
         if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
             alert(data[0].message);
@@ -18,49 +23,51 @@ talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localS
             $scope.subjects=data;
             $scope.quizSubject=true;}
     });
-    $scope.selectSubjectChanged=function(){
-        $scope.levels=[];
-        $scope.quizSubject=false;
-        var subjects=$localStorage.subject;
-        for(var i=0;i<subjects.length;i++)
-        {
-            if(subjects[i].id==$scope.selectSubject)
-            {
-                $scope.subjectName=subjects[i].name;
-                $scope.iconurl=subjects[i].icon_class;
-                $scope.heading="Subject";
-            }
+    //$scope.selectSubjectChanged=function(){
+    //    $scope.levels=[];
+    //    $scope.quizSubject=false;
+    //    var subjects=$localStorage.subject;
+    //    for(var i=0;i<subjects.length;i++)
+    //    {
+    //        if(subjects[i].id==$scope.selectSubject)
+    //        {
+    //            $scope.subjectName=subjects[i].name;
+    //            $scope.iconurl=subjects[i].icon_class;
+    //            $scope.heading="Subject";
+    //        }
+    //
+    //    }
+    //    var jsonData={type:"level",token:sessiondata.token,subjectid:$scope.selectSubject,testtype:2};
+    //    tsQuizTemplate.query(jsonData).$promise.then(function (data) {
+    //        if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
+    //            alert(data[0].message);
+    //        }  else{
+    //            $localStorage.level=data;
+    //            $scope.levels=data;
+    //            $scope.quizLevels=true;}
+    //    });
+    //
+    //};
+    //$scope.selectLevelChanged=function(){
+    //    var level=$localStorage.level;
+    //    for(var i=0;i<level.length;i++){
+    //        if(level[i].id==$scope.selectedLevel)
+    //        {
+    //            levelCount=level[i].count;
+    //        }
+    //    }
+    //        var jsonData={type:"language",token:sessiondata.token,subjectid:$scope.selectSubject};
+    //        tsQuizTemplate.query(jsonData).$promise.then(function (data) {
+    //            $scope.language=data[0].name;
+    //            $scope.languageid=data[0].id;
+    //            $scope.codeTextTemplate=data[0].template;
+    //        });
+    //    $scope.quizLevels=false;
+    //    $scope.quizStartAccepted=true;
+    //
+    //};
 
-        }
-        var jsonData={type:"level",token:sessiondata.token,subjectid:$scope.selectSubject,testtype:2};
-        tsQuizTemplate.query(jsonData).$promise.then(function (data) {
-            if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
-                alert(data[0].message);
-            }  else{
-                $localStorage.level=data;
-                $scope.levels=data;
-                $scope.quizLevels=true;}
-        });
 
-    };
-    $scope.selectLevelChanged=function(){
-        var level=$localStorage.level;
-        for(var i=0;i<level.length;i++){
-            if(level[i].id==$scope.selectedLevel)
-            {
-                levelCount=level[i].count;
-            }
-        }
-            var jsonData={type:"language",token:sessiondata.token,subjectid:$scope.selectSubject};
-            tsQuizTemplate.query(jsonData).$promise.then(function (data) {
-                $scope.language=data[0].name;
-                $scope.languageid=data[0].id;
-                $scope.codeTextTemplate=data[0].template;
-            });
-        $scope.quizLevels=false;
-        $scope.quizStartAccepted=true;
-
-    };
     $scope.cancelQuiz=function(){
         $scope.$broadcast('timer-stopped', $scope.counter);
         $scope.counter = 5;

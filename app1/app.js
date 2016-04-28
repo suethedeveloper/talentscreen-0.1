@@ -16,4 +16,5 @@ var talentScreen=angular.module("talentScreen",[
     'ngCookies',
     'ngVideo'
 ]);
-var apiURL="http://0.0.0.0";
+//var apiURL="http://0.0.0.0";
+var apiURL="http://130.211.190.15";
