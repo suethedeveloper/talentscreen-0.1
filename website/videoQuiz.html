@@ -24,9 +24,10 @@
                 <div class="row" data-toggle="isotope">
                     <div class="item col-xs-12 col-lg-12">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
-                            <div ng-controller="preQuizController">
+                            <!--<div ng-controller="preQuizController">-->
                                 <quiz-subject></quiz-subject>
                                 <quiz-level></quiz-level>
+                            <!--</div>-->
                                 <div class="panel-body" ng-show="quizStartAccepted">
                                     <ul class="list-group">
                                         <li class="list-group-item media v-middle">
@@ -51,6 +52,7 @@
                                         </button>
                                     </div>
                                 </div>
+                            <!--</div>-->
                                 <div class="panel-body" ng-show="countDown">
                                     <div class="text-center text-headline text-red-1000" style="color: #00635a;font-family: FontMfizz;font-size: 30px;">
                                         <blink data-speed="500"><strong style="text-shadow: 0 0 0.9em #87F, 0 0 0.9em #87F,0 0 0.2em #87F">{{counter}}</strong></blink>
@@ -63,7 +65,7 @@
                                 </div>
                                 <video-quiz></video-quiz>
                                 <quiz-results></quiz-results>
-                            </div>
+
                         </div>
                     </div>
 

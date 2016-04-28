@@ -22,17 +22,18 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
     var isFirefox = !!navigator.mozGetUserMedia;
     var sessiondata=$cookieStore.get("session");
     $scope.sessiondata = sessiondata;
-
-    var jsonData={type:"subject",token:sessiondata.token,testtype:3};
-    tsQuizTemplate.query(jsonData).$promise.then(function (data) {
-        if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
-            alert(data[0].message);
-        }
-        else{
-            $localStorage.subject=data;
-            $scope.subjects=data;
-            $scope.quizSubject=true;}
-    });
+    //
+    //var jsonData={type:"subject",token:sessiondata.token,testtype:3};
+    //tsQuizTemplate.query(jsonData).$promise.then(function (data) {
+    //    if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
+    //        alert(data[0].message);
+    //    }
+    //    else{
+    //        $localStorage.subject=data;
+    //        $scope.subjects=data;
+    //        $scope.quizSubject=true;}
+    //});
+    //
     //$scope.selectSubjectChanged=function(){
     //    $scope.levels=[];
     //    $scope.quizSubject=false;
@@ -70,6 +71,7 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
     //    $scope.quizStartAccepted=true;
     //
     //};
+    //
     $scope.onTimeout = function() {
         if($scope.counter ===  1) {
             $scope.countDown=false;
@@ -127,6 +129,7 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
     });
     $scope.startQuiz=function(){
             UserMedia.get().then(function (response) {
+                console.log('response',response);
                 if(response.status==400){
                     $scope.videoQuizContainer=false;
                     $scope.videoNotSupported=true;
@@ -147,6 +150,8 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
 
 
     };
+
+
     $scope.cancelQuiz=function(){
         $scope.$broadcast('timer-stopped', $scope.counter);
         $scope.counter = 5;

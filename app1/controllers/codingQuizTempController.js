@@ -2,6 +2,7 @@
  * Created by sande on 4/19/2016.
  */
 talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localStorage','tsQuizTemplate','codeCompiler','$timeout','quizResults',function($scope,$cookieStore,$localStorage,tsQuizTemplate,codeCompiler,$timeout,quizResults){
+
     $scope.counter = 5;
     var count=1;
     $scope.count15 = true;
@@ -12,17 +13,22 @@ talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localS
 
     var totalTimeForCodingQuiz=0;
     var totalTimeForQuiz=0;
-    var jsonData={type:"subject",token:sessiondata.token,testtype:2};
 
-    tsQuizTemplate.query(jsonData).$promise.then(function (data) {
-        if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
-            alert(data[0].message);
-        }
-        else{
-            $localStorage.subject=data;
-            $scope.subjects=data;
-            $scope.quizSubject=true;}
-    });
+
+
+
+    //var jsonData={type:"subject",token:sessiondata.token,testtype:2};
+    //
+    //tsQuizTemplate.query(jsonData).$promise.then(function (data) {
+    //    if(data[0].status==400 || data[0].status==403 ||data[0].status==404 || data[0].status==500){
+    //        alert(data[0].message);
+    //    }
+    //    else{
+    //        $localStorage.subject=data;
+    //        $scope.subjects=data;
+    //        $scope.quizSubject=true;}
+    //});
+
     //$scope.selectSubjectChanged=function(){
     //    $scope.levels=[];
     //    $scope.quizSubject=false;
@@ -67,6 +73,17 @@ talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localS
     //
     //};
 
+    $scope.startQuiz=function(){
+        $scope.quizStartAccepted=false;
+        $scope.countDown=true;
+        $localStorage.quiz="";
+        var jsonData={type:"questions",token:sessiondata.token,candidateid:sessiondata.data._id,testtype:2,testlevel:$scope.selectedLevel,testsubject:$scope.selectSubject,count:levelCount};
+        tsQuizTemplate.show(jsonData).$promise.then(function (data){
+            $localStorage.quiz=data;
+        });
+        mytimeout = $timeout($scope.onTimeout, 1000);
+    };
+
 
     $scope.cancelQuiz=function(){
         $scope.$broadcast('timer-stopped', $scope.counter);
@@ -88,16 +105,10 @@ talentScreen.controller("codingQuizController",['$scope','$cookieStore','$localS
     $scope.compile = function () {
         codingCompilation(count);
     };
-    $scope.startQuiz=function(){
-        $scope.quizStartAccepted=false;
-        $scope.countDown=true;
-        $localStorage.quiz="";
-        var jsonData={type:"questions",token:sessiondata.token,candidateid:sessiondata.data._id,testtype:2,testlevel:$scope.selectedLevel,testsubject:$scope.selectSubject,count:levelCount};
-        tsQuizTemplate.show(jsonData).$promise.then(function (data){
-            $localStorage.quiz=data;
-        });
-        mytimeout = $timeout($scope.onTimeout, 1000);
-    };
+
+
+
+
     $scope.onTimeout = function() {
         if($scope.counter ===  1) {
             $scope.$broadcast('timer-stopped', 0);

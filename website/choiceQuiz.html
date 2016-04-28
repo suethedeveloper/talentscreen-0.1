@@ -24,9 +24,13 @@
                 <div class="row" data-toggle="isotope">
                     <div class="item col-xs-12 col-lg-12">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
+
                             <div ng-controller="preQuizController">
                                 <quiz-subject></quiz-subject>
                                 <quiz-level></quiz-level>
+                            </div>
+
+                            <div ng-controller="takeQuizController">
                                 <div class="panel-body" ng-show="quizStartAccepted">
                                     <ul class="list-group">
                                         <li class="list-group-item media v-middle">
@@ -61,8 +65,10 @@
                                         </button>
                                     </div>
                                 </div>
+
+                                <choice-quiz></choice-quiz>
                             </div>
-                            <choice-quiz></choice-quiz>
+
                             <quiz-results></quiz-results>
                         </div>
                     </div>
