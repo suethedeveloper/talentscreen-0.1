@@ -1,20 +1,13 @@
 /**
  * Created by Sue on 4/27/2016.
  */
-talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','codeCompiler','$timeout','quizResults',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,codeCompiler,$timeout,quizResults){
-
-    $scope.counter = 5;
-    $scope.count15 = true;
-    $scope.totalTimeTaken=0;
+talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','codeCompiler','$timeout',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,codeCompiler,$timeout){
     var count=1;
     var sessiondata=$cookieStore.get("session");
     $scope.subjectName="";
     $scope.quizSubject=true;
     $scope.sessiondata = sessiondata;
 
-
-
-    //var sessiondata = $scope.sessiondata;
     var jsonData={type:"subject",token:sessiondata.token,testtype:$scope.testtype};
 
     tsQuizTemplate.query(jsonData).$promise.then(function (data) {
@@ -31,6 +24,7 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
     $scope.selectSubjectChanged=function(){
         $scope.levels=[];
         $scope.quizSubject=false;
+
         var subjects=$localStorage.subject;
         for(var i=0;i<subjects.length;i++)
         {
@@ -40,7 +34,6 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
                 $scope.iconurl=subjects[i].icon_class;
                 $scope.heading="Subject";
             }
-
         }
         var jsonData={type:"level",token:sessiondata.token,subjectid:$scope.selectSubject,testtype:$scope.testtype};
         tsQuizTemplate.query(jsonData).$promise.then(function (data) {
@@ -51,7 +44,6 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
                 $scope.levels=data;
                 $scope.quizLevels=true;}
         });
-
     };
 
     $scope.selectLevelChanged=function(){
@@ -75,5 +67,7 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
         $rootScope.quizStartAccepted=true;
         $rootScope.selectedLevel = $scope.selectedLevel;
         $rootScope.selectSubject = $scope.selectSubject;
+        $rootScope.subjectName = $scope.subjectName;
+        $rootScope.iconurl = $scope.iconurl;
     };
 }]);

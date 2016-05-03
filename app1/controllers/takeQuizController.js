@@ -1,14 +1,14 @@
 ///**
 // * Created by Sue on 4/28/2016.
 // */
-talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','codeCompiler','$timeout','quizResults',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,codeCompiler,$timeout,quizResults){
+talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','$timeout','choiceQuizValidationService','quizResults',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,$timeout,choiceQuizValidationService,quizResults){
     $scope.counter = 5;
     $scope.count15 = true;
     $scope.totalTimeTaken=0;
+
     var count=1;
     var sessiondata=$cookieStore.get("session");
-    $scope.subjectName="";
-    $scope.quizSubject=true;
+
     $scope.sessiondata = sessiondata;
 
     $scope.startQuiz=function(){
@@ -16,6 +16,7 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
         $scope.countDown=true;
         $localStorage.quiz="";
         var jsonData={type:"questions",token:sessiondata.token,candidateid:sessiondata.data._id,testtype:1,testlevel:$rootScope.selectedLevel,testsubject:$rootScope.selectSubject,count:levelCount};
+
         tsQuizTemplate.show(jsonData).$promise.then(function (data){
             $localStorage.quiz=data;
         });
@@ -35,7 +36,6 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
 
         $scope.counter--;
         mytimeout = $timeout($scope.onTimeout, 1000);
-
     };
     $scope.$on('timer-stopped', function(event, remaining) {
         if(count===1){$scope.questions=$localStorage.quiz.questions;}
@@ -49,7 +49,7 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
                     choiceStudentAnswer(count - 1);
                 }
                 if (count > $scope.questions.length) {
-                    choiceQuizValidation();
+                    choiceQuizValidationService.choiceQuizValidation(sessiondata, $scope, $localStorage, quizResults);
                 }
                 else {
                     $scope.counter = 59;
@@ -64,39 +64,8 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
                 }
             }
         }
-
     });
 
-    function choiceQuizValidation(){
-        $scope.quizBegin=false;
-        var correctAnswerCount=0;
-        var attempted=0;
-        for(var i=0;i<$localStorage.quiz.questions.length;i++){
-            if($localStorage.quiz.questions[i].answeredornot=="Y"){
-                attempted++;
-                if($localStorage.quiz.questions[i].originalanswer==$localStorage.quiz.questions[i].candidateanswer){
-                    correctAnswerCount++;
-                    $localStorage.quiz.questions[i].correctanswerornot="Y"
-                }
-            }
-        }
-        $localStorage.quiz.correctanswers=correctAnswerCount;
-        $localStorage.quiz.atempted=attempted;
-        function z(n) {return (n<10? '0' : '') + n;}
-        var seconds=$scope.totalTimeTaken%60;
-        var minutes=Math.floor($scope.totalTimeTaken/60);
-        $localStorage.quiz.timetaken=z(minutes)+':'+z(seconds);
-        var jsonData={data:$localStorage.quiz,token:sessiondata.token};
-        quizResults.postData(jsonData).then(function(response){
-            $scope.showResults=true;
-            $scope.atemptedQuestions=response.atempted;
-            $scope.correctAnswers=response.correctanswers;
-            $scope.totalTime=response.timetaken;
-            var input=$localStorage.quiz.questions.length*60;
-            var jsonData= {totalTime:z(Math.floor(input/60))+':'+z(input%60),totalTimeTaken:response.timetaken,atemptedQuestions:response.atempted,correctAnswers:response.correctanswers,totalQuestions:$localStorage.quiz.questions.length};
-            console.log(jsonData);
-        });
-    }
     function choiceQuestion(questionNumber) {
         $scope.$broadcast('timer-start');
         $scope.timerRunning = true;
@@ -134,5 +103,37 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
         $scope.$broadcast('timer-stopped', 0);
         $timeout.cancel(mytimeout);
     };
-
 }]);
+
+talentScreen.service('choiceQuizValidationService', function(){
+    this.choiceQuizValidation = function(sessiondata, $scope, $localStorage, quizResults){
+        $scope.quizBegin=false;
+        var correctAnswerCount=0;
+        var attempted=0;
+        for(var i=0;i<$localStorage.quiz.questions.length;i++){
+            if($localStorage.quiz.questions[i].answeredornot=="Y"){
+                attempted++;
+                if($localStorage.quiz.questions[i].originalanswer==$localStorage.quiz.questions[i].candidateanswer){
+                    correctAnswerCount++;
+                    $localStorage.quiz.questions[i].correctanswerornot="Y"
+                }
+            }
+        }
+        $localStorage.quiz.correctanswers=correctAnswerCount;
+        $localStorage.quiz.atempted=attempted;
+        function z(n) {return (n<10? '0' : '') + n;}
+        var seconds=$scope.totalTimeTaken%60;
+        var minutes=Math.floor($scope.totalTimeTaken/60);
+        $localStorage.quiz.timetaken=z(minutes)+':'+z(seconds);
+        var jsonData={data:$localStorage.quiz,token:sessiondata.token};
+
+        quizResults.postData(jsonData).then(function(response){
+            $scope.showResults=true;
+            $scope.atemptedQuestions=response.atempted;
+            $scope.correctAnswers=response.correctanswers;
+            $scope.totalTime=response.timetaken;
+            var input=$localStorage.quiz.questions.length*60;
+            var jsonData= {totalTime:z(Math.floor(input/60))+':'+z(input%60),totalTimeTaken:response.timetaken,atemptedQuestions:response.atempted,correctAnswers:response.correctanswers,totalQuestions:$localStorage.quiz.questions.length};
+        });
+    };
+});
