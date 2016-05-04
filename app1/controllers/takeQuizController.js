@@ -15,7 +15,7 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
         $scope.quizStartAccepted=false;
         $scope.countDown=true;
         $localStorage.quiz="";
-        var jsonData={type:"questions",token:sessiondata.token,candidateid:sessiondata.data._id,testtype:1,testlevel:$rootScope.selectedLevel,testsubject:$rootScope.selectSubject,count:levelCount};
+        var jsonData={type:"questions",token:sessiondata.token,candidateid:sessiondata.data._id,testtype:$rootScope.testtype,testlevel:$rootScope.selectedLevel,testsubject:$rootScope.selectSubject,count:levelCount};
 
         tsQuizTemplate.show(jsonData).$promise.then(function (data){
             $localStorage.quiz=data;

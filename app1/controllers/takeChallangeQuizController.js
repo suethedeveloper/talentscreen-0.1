@@ -20,6 +20,7 @@ talentScreen.controller("takeChallangeQuizController",['$scope','$cookieStore','
         $scope.quizTypes=false;
         $scope.types=$localStorage.quizType;
     }
+
     $scope.selectTestType=function(){
         $scope.subjects=[];
         $scope.quizTypes=true;

@@ -246,17 +246,17 @@ talentScreen.config(
                 })
                 .state('website-student.coding', {
                     url: '/coding',
-                    templateUrl: 'website/codingQuiz.html',
+                    templateUrl: 'website/takingQuiz.html',
                     controller: 'sessionController'
                 })
                 .state('website-student.choice', {
                     url: '/choice',
-                    templateUrl: 'website/choiceQuiz.html',
+                    templateUrl: 'website/takingQuiz.html',
                     controller: 'sessionController'
                 })
                 .state('website-student.video', {
                     url: '/video',
-                    templateUrl: 'website/videoQuiz.html',
+                    templateUrl: 'website/takingQuiz.html',
                     controller: 'sessionController'
                 })
                 .state('website-student.courses', {
@@ -283,11 +283,6 @@ talentScreen.config(
                     url: '/course-forum-thread',
                     templateUrl: 'website/student-course-forum-thread.html',
                     controller: 'sessionController'
-                })
-                .state('website-student.take-choice-quiz', {
-                    url: '/take-choice-quiz',
-                    templateUrl: 'app1/views/student-take-choice-quiz.html',
-                    controller: 'choiceQuizController'
                 })
                 .state('website-student.take-challange-quiz', {
                     url: '/take-challange-quiz',

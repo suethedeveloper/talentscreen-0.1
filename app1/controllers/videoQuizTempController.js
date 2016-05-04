@@ -6,7 +6,7 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
     $scope.counter = 5;
     $scope.ngTimer=true;
     $scope.count15 = true;
-    $scope.videoQuizContainer=true;
+    //$scope.videoQuizContainer=true;
     $scope.recordingShow=true;
     $scope.timerBlink=true;
     $scope.normalTimer=false;
@@ -131,7 +131,7 @@ talentScreen.controller("videoQuizController",['$scope','$cookieStore','$localSt
             UserMedia.get().then(function (response) {
                 console.log('response',response);
                 if(response.status==400){
-                    $scope.videoQuizContainer=false;
+                    //$scope.videoQuizContainer=false;
                     $scope.videoNotSupported=true;
                     $scope.startButton=false;
                 }
