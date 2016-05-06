@@ -1,7 +1,7 @@
 /**
  * Created by Sue on 4/27/2016.
  */
-talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','codeCompiler','$timeout','$location',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,codeCompiler,$timeout,$location){
+talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore','$localStorage','tsQuizTemplate','$timeout','$location',function($scope,$rootScope,$cookieStore,$localStorage,tsQuizTemplate,$timeout,$location){
     var count=1;
     var sessiondata=$cookieStore.get("session");
 
@@ -70,9 +70,9 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
         if ($rootScope.testtype === 2){
             var jsonData={type:"language",token:sessiondata.token,subjectid:$scope.selectSubject};
             tsQuizTemplate.query(jsonData).$promise.then(function (data) {
-                $scope.language=data[0].name;
-                $scope.languageid=data[0].id;
-                $scope.codeTextTemplate=data[0].template;
+                $rootScope.language = data[0].name;
+                $rootScope.languageid = data[0].id;
+                $rootScope.codeTextTemplate = data[0].template;
             });
         }
 

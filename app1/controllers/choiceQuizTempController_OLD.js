@@ -3,7 +3,6 @@
  */
 
 talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localStorage','tsQuizTemplate','$timeout','quizResults',function($scope,$cookieStore,$localStorage,tsQuizTemplate,$timeout,quizResults){
-    console.log('WORKING???');
     //$scope.counter = 5;
     //$scope.count15 = true;
     //$scope.totalTimeTaken=0;

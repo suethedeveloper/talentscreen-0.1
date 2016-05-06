@@ -82,8 +82,15 @@
                                         </button>
                                     </div>
                                 </div>
-                                <choice-quiz></choice-quiz>
+
+                                <div ng-switch="testtype">
+                                    <div ng-switch-when="1"><choice-quiz></choice-quiz></div>
+                                    <div ng-switch-when="2"><coding-quiz></coding-quiz></div>
+                                    <div ng-switch-when="3"><video-quiz></video-quiz></div>
+                                </div>
+
                                 <quiz-results></quiz-results>
+
                             </div>
                         </div>
                     </div>
