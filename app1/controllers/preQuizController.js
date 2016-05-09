@@ -32,7 +32,6 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
             $scope.quizSubject=true;}
     });
 
-
     $scope.selectSubjectChanged=function(){
         $scope.levels=[];
         $scope.quizSubject=false;
@@ -59,7 +58,7 @@ talentScreen.controller("preQuizController",['$scope','$rootScope','$cookieStore
         });
     };
 
-    $scope.selectLevelChanged=function(){
+    $scope.selectLevelChanged = function(){
         var level=$localStorage.level;
         for(var i=0;i<level.length;i++){
             if(level[i].id==$scope.selectedLevel)
