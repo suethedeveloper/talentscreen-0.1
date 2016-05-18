@@ -83,12 +83,9 @@
                                     </div>
                                 </div>
 
-                                <div ng-switch="testtype">
-                                    <div ng-switch-when="1"><choice-quiz></choice-quiz></div>
-                                    <div ng-switch-when="2"><coding-quiz></coding-quiz></div>
-                                    <div ng-switch-when="3"><video-quiz></video-quiz></div>
-                                </div>
-
+                                <choice-quiz ng-show="testtype===1"></choice-quiz>
+                                <coding-quiz ng-show="testtype===2"></coding-quiz>
+                                <video-quiz ng-show="testtype===3"></video-quiz>
                                 <quiz-results></quiz-results>
 
                             </div>

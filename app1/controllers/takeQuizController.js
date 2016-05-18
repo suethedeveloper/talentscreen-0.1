@@ -103,6 +103,7 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
                         $scope.counter = 59;
                         //choiceQuestion(count);
                         choiceQuizValidationService.choiceQuestion($scope, count);
+
                         if (count == $scope.questions.length) {
                             $scope.count14 = true;
                             $scope.count15 = false;
@@ -113,19 +114,19 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
                     }
                 }
             }
-        } else if ($rootScope.testtype === 2){
-            if($scope.resultStatus){
-                $scope.totalTimeTaken=$scope.totalTimeTaken+($localStorage.quiz.questions[count-2].time-$scope.counter);
-                totalTimeForCodingQuiz=totalTimeForCodingQuiz+$localStorage.quiz.questions[count-2].time;
-                $scope.resultStatus=false;
-                $scope.counter=10;
-                $scope.codingQuizBegin=false;
-                codingCompilation(count-1);
+        } else if ($rootScope.testtype === 2) {
+            if ($scope.resultStatus) {
+                $scope.totalTimeTaken = $scope.totalTimeTaken + ($localStorage.quiz.questions[count - 2].time - $scope.counter);
+                totalTimeForCodingQuiz = totalTimeForCodingQuiz + $localStorage.quiz.questions[count - 2].time;
+                $scope.resultStatus = false;
+                $scope.counter = 10;
+                $scope.codingQuizBegin = false;
+                codingCompilation(count - 1);
                 mytimeout = $timeout($scope.onTimeout, 1000);
 
             } else {
-                if(remaining === 0) {
-                    $scope.countDown=false;
+                if (remaining === 0) {
+                    $scope.countDown = false;
                     var lang = $rootScope.language;
                     $scope.cmOption = {
                         lineNumbers: true,
@@ -174,64 +175,6 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
                     }
                 }
             }
-        } else if ($rootScope.testtype === 3){
-            recordAudio.stopRecording(function(url) {
-                recordAudio.getDataURL(function(audioDataURL) {
-                    if(count>1){
-                        videourl[blobCount-1]=url;}
-                    postFiles(blobCount,audioDataURL);
-                    blobCount++;
-                });
-            });
-            if(remaining === 0) {
-                if(count === 1){
-                    $scope.questions=$localStorage.quiz.questions;
-
-                }
-                if (count > 1) {
-                    $scope.totalTimeTaken = $scope.totalTimeTaken + ($localStorage.quiz.questions[count - 2].time - $scope.counter);
-                    $localStorage.quiz.questions[count - 2].candidatetime = $scope.counter;
-                    totalTimeForQuiz = totalTimeForQuiz + $localStorage.quiz.questions[count - 2].time;
-                }
-                if (count > $scope.questions.length) {
-                    $scope.recordingShow=false;
-                    $scope.normalTimer = true;
-                    $scope.timerBlink = true;
-                    $timeout.cancel(mytimeout);
-                    $scope.count15 = true;
-                    window.stream.getTracks().forEach(function(track) {
-                        track.stop();});
-                    setTimeout(function(){
-                        showRecordings();},10000);
-
-                }
-                else {
-                    if (window.URL) {
-                        $scope.videostream = $sce.trustAsResourceUrl(window.URL.createObjectURL(window.stream));
-                    }
-                    else
-                    {
-                        $scope.videostream = $sce.trustAsResourceUrl(window.stream);
-                    }
-                    var options = {
-                        mimeType: 'video/webm', // or video/mp4 or audio/ogg
-                        audioBitsPerSecond: 128000,
-                        videoBitsPerSecond: 128000
-                        // if this line is provided, skip above two
-                    };
-                    recordAudio = RecordRTC(window.stream, options);
-                    recordAudio.startRecording();
-                    $scope.counter = $localStorage.quiz.questions[count - 1].time;
-                    if (count == $scope.questions.length) {
-                        $scope.count14 = true;
-                        $scope.count15 = false;
-                    }
-                    videoQuestion(count);
-                    $scope.videoQuizBegin = true;
-                    count++;
-                    mytimeout = $timeout($scope.onTimeout, 1000);
-                }
-            }
         }
     });
 
@@ -262,28 +205,6 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
             codingCompilation(count);
         };
     }
-
-    // CHOICE QUIZ
-    //function choiceQuestion(questionNumber) {
-    //    $scope.$broadcast('timer-start');
-    //    $scope.timerRunning = true;
-    //    $scope.questionNo=questionNumber
-    //    $scope.questionText = $scope.questions[questionNumber-1].question;
-    //    $scope.answer1Text = $scope.questions[questionNumber-1].answer1;
-    //    $scope.answer2Text = $scope.questions[questionNumber-1].answer2;
-    //    $scope.answer3Text = $scope.questions[questionNumber-1].answer3;
-    //    $scope.answer4Text = $scope.questions[questionNumber-1].answer4;
-    //    $scope.answer1 = "";
-    //    $scope.answer2 = "";
-    //    $scope.answer3 = "";
-    //    $scope.answer4 = "";
-    //}
-    //function choiceStudentAnswer(count){
-    //    if($scope.answer1){$localStorage.quiz.questions[count-1].candidateanswer=MD5("a");$localStorage.quiz.questions[count-1].answeredornot="Y";}
-    //    else if($scope.answer2){$localStorage.quiz.questions[count-1].candidateanswer=MD5("b");$localStorage.quiz.questions[count-1].answeredornot="Y";}
-    //    else if($scope.answer3){$localStorage.quiz.questions[count-1].candidateanswer=MD5("c");$localStorage.quiz.questions[count-1].answeredornot="Y";}
-    //    else if($scope.answer4){$localStorage.quiz.questions[count-1].candidateanswer=MD5("d");$localStorage.quiz.questions[count-1].answeredornot="Y";}
-    //}
 
     //CODING QUIZ
     function codingQuestion(questionNumber){
@@ -417,22 +338,15 @@ talentScreen.controller("takeQuizController",['$scope','$rootScope','$cookieStor
             }
         });
     }
-
 }]);
 
 talentScreen.service('choiceQuizValidationService', function(){
     this.choiceQuizValidation = function(sessiondata, $scope, $localStorage, quizResults){
-        console.log("choiceQuizValidation",this);
-        console.log("$localStorage",$localStorage);
         $scope.quizBegin=false;
         var correctAnswerCount=0;
         var attempted=0;
 
-
-        console.log("$localStorage.quiz.questions.length",$localStorage.quiz.questions.length);
-
         for(var i=0;i<$localStorage.quiz.questions.length;i++){
-            console.log("attempted",i, attempted);
             if($localStorage.quiz.questions[i].answeredornot=="Y"){
                 attempted++;
                 if($localStorage.quiz.questions[i].originalanswer==$localStorage.quiz.questions[i].candidateanswer){
@@ -441,7 +355,7 @@ talentScreen.service('choiceQuizValidationService', function(){
                 }
             }
         }
-        console.log("attempted2",i, attempted);
+
         $localStorage.quiz.correctanswers=correctAnswerCount;
         $localStorage.quiz.atempted=attempted;
         function z(n) {return (n<10? '0' : '') + n;}
@@ -460,10 +374,9 @@ talentScreen.service('choiceQuizValidationService', function(){
         });
     };
     this.choiceQuestion = function($scope, questionNumber){
-        console.log("choiceQuestion", this);
         $scope.$broadcast('timer-start');
         $scope.timerRunning = true;
-        $scope.questionNo=questionNumber
+        $scope.questionNo=questionNumber;
         $scope.questionText = $scope.questions[questionNumber-1].question;
         $scope.answer1Text = $scope.questions[questionNumber-1].answer1;
         $scope.answer2Text = $scope.questions[questionNumber-1].answer2;
@@ -473,39 +386,12 @@ talentScreen.service('choiceQuizValidationService', function(){
         $scope.answer2 = "";
         $scope.answer3 = "";
         $scope.answer4 = "";
-        console.log("choiceQuestion 222", this);
     };
-    this.choiceStudentAnswer = function($scope, $localStorage, count){
 
-        if($scope.answer1){$localStorage.quiz.questions[count-1].candidateanswer=MD5("a");$localStorage.quiz.questions[count-1].answeredornot="Y";}
+    this.choiceStudentAnswer = function($scope, $localStorage, count){
+        if ($scope.answer1){$localStorage.quiz.questions[count-1].candidateanswer=MD5("a");$localStorage.quiz.questions[count-1].answeredornot="Y";}
         else if($scope.answer2){$localStorage.quiz.questions[count-1].candidateanswer=MD5("b");$localStorage.quiz.questions[count-1].answeredornot="Y";}
         else if($scope.answer3){$localStorage.quiz.questions[count-1].candidateanswer=MD5("c");$localStorage.quiz.questions[count-1].answeredornot="Y";}
         else if($scope.answer4){$localStorage.quiz.questions[count-1].candidateanswer=MD5("d");$localStorage.quiz.questions[count-1].answeredornot="Y";}
-        console.log($localStorage.quiz.questions[count-1]);
-        console.log("choiceStudentAnswer 2222",this);
-        console.log($localStorage.quiz.questions[count-1].candidateanswer, $localStorage.quiz.questions[count-1].answeredornot);
     };
 });
-
-/*
-*     function choiceQuestion(questionNumber) {
- $scope.$broadcast('timer-start');
- $scope.timerRunning = true;
- $scope.questionNo=questionNumber
- $scope.questionText = $scope.questions[questionNumber-1].question;
- $scope.answer1Text = $scope.questions[questionNumber-1].answer1;
- $scope.answer2Text = $scope.questions[questionNumber-1].answer2;
- $scope.answer3Text = $scope.questions[questionNumber-1].answer3;
- $scope.answer4Text = $scope.questions[questionNumber-1].answer4;
- $scope.answer1 = "";
- $scope.answer2 = "";
- $scope.answer3 = "";
- $scope.answer4 = "";
- }
- function choiceStudentAnswer(count){
- if($scope.answer1){$localStorage.quiz.questions[count-1].candidateanswer=MD5("a");$localStorage.quiz.questions[count-1].answeredornot="Y";}
- else if($scope.answer2){$localStorage.quiz.questions[count-1].candidateanswer=MD5("b");$localStorage.quiz.questions[count-1].answeredornot="Y";}
- else if($scope.answer3){$localStorage.quiz.questions[count-1].candidateanswer=MD5("c");$localStorage.quiz.questions[count-1].answeredornot="Y";}
- else if($scope.answer4){$localStorage.quiz.questions[count-1].candidateanswer=MD5("d");$localStorage.quiz.questions[count-1].answeredornot="Y";}
- }
-* */

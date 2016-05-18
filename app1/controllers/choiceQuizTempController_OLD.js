@@ -28,7 +28,7 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //    $scope.levels=[];
     //    $scope.quizSubject=false;
     //    var subjects=$localStorage.subject;
-    //    for(var i=0;i<subjects.length;i++)
+    //    for(var i=0;i<subjects.length;i)
     //    {
     //        if(subjects[i].id==$scope.selectSubject)
     //        {
@@ -52,7 +52,7 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //};
     //$scope.selectLevelChanged=function(){
     //    var level=$localStorage.level;
-    //    for(var i=0;i<level.length;i++){
+    //    for(var i=0;i<level.length;i){
     //        if(level[i].id==$scope.selectedLevel)
     //        {
     //            levelCount=level[i].count;
@@ -104,7 +104,7 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //        if($localStorage.quiz.questions) {
     //            $scope.countDown = false;
     //            if (count != 1) {
-    //                $scope.totalTimeTaken = $scope.totalTimeTaken + (60 - $scope.counter);
+    //                $scope.totalTimeTaken = $scope.totalTimeTaken  (60 - $scope.counter);
     //                choiceStudentAnswer(count - 1);
     //            }
     //            if (count > $scope.questions.length) {
@@ -119,7 +119,7 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //                }
     //                mytimeout = $timeout($scope.onTimeout, 1000);
     //                $scope.quizBegin = true;
-    //                count++;
+    //                count;
     //            }
     //        }
     //    }
@@ -130,21 +130,21 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //    $scope.quizBegin=false;
     //    var correctAnswerCount=0;
     //    var attempted=0;
-    //    for(var i=0;i<$localStorage.quiz.questions.length;i++){
+    //    for(var i=0;i<$localStorage.quiz.questions.length;i){
     //        if($localStorage.quiz.questions[i].answeredornot=="Y"){
-    //            attempted++;
+    //            attempted;
     //            if($localStorage.quiz.questions[i].originalanswer==$localStorage.quiz.questions[i].candidateanswer){
-    //                correctAnswerCount++;
+    //                correctAnswerCount;
     //                $localStorage.quiz.questions[i].correctanswerornot="Y"
     //            }
     //        }
     //    }
     //    $localStorage.quiz.correctanswers=correctAnswerCount;
     //    $localStorage.quiz.atempted=attempted;
-    //    function z(n) {return (n<10? '0' : '') + n;}
+    //    function z(n) {return (n<10? '0' : '')  n;}
     //    var seconds=$scope.totalTimeTaken%60;
     //    var minutes=Math.floor($scope.totalTimeTaken/60);
-    //    $localStorage.quiz.timetaken=z(minutes)+':'+z(seconds);
+    //    $localStorage.quiz.timetaken=z(minutes)':'z(seconds);
     //    var jsonData={data:$localStorage.quiz,token:sessiondata.token};
     //    quizResults.postData(jsonData).then(function(response){
     //        $scope.showResults=true;
@@ -152,7 +152,7 @@ talentScreen.controller("choiceQuizController",['$scope','$cookieStore','$localS
     //        $scope.correctAnswers=response.correctanswers;
     //        $scope.totalTime=response.timetaken;
     //        var input=$localStorage.quiz.questions.length*60;
-    //        var jsonData= {totalTime:z(Math.floor(input/60))+':'+z(input%60),totalTimeTaken:response.timetaken,atemptedQuestions:response.atempted,correctAnswers:response.correctanswers,totalQuestions:$localStorage.quiz.questions.length};
+    //        var jsonData= {totalTime:z(Math.floor(input/60))':'z(input%60),totalTimeTaken:response.timetaken,atemptedQuestions:response.atempted,correctAnswers:response.correctanswers,totalQuestions:$localStorage.quiz.questions.length};
     //        console.log(jsonData);
     //    });
     //}
